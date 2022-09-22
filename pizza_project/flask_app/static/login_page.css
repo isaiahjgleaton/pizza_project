@@ -1,0 +1,27 @@
+.header{
+    color: blue;
+    justify-content: space-between;
+    margin-top: -40px;
+}
+
+.login{
+    font:oblique;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding-left: 20px;
+    width: 200px;
+    height: 230px;
+    margin-left: 500px;
+    margin-top: 90px;
+}
+#login{
+    background-color:blue;
+    color: white
+}
+#reg_link{
+    background-color: white;
+    color: blue;
+    margin-left: 970px;
+    
+
+}

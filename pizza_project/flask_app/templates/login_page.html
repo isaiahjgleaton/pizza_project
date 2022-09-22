@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="{{ url_for('static', filename='login_page.css') }}">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <button id="reg_link"><a href="/register_page">Don't have an account? Click here to register!</a></button>
+    <div class="header">
+        <h1>Isaiah's Pizza!</h1>
+        
+    </div>
+    <div class="login">
+        <h2>Login!</h2>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form action="/login" method="post">
+            <label for="email">Email:</label>
+            <input type="text" name="email">
+            <br>
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" name="password">
+            <br>
+            <br>
+            <button id="login">Login</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

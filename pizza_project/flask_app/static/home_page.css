@@ -1,0 +1,39 @@
+.header{
+    color: blue;
+    justify-content: space-between;
+    margin-top: -40px;
+}
+.bar{
+    background-color: white;
+    color: blue;
+    margin-left: 990px;
+    width: 400px;
+    font-size: larger;
+    padding-left: 10px;
+    display: inline;
+}
+
+.options{
+    margin-left: 215px;
+    width: 800px;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.new_order, .fav_order, .surprise_order {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    padding: -20px;
+}
+
+.option_header{
+    margin-left: 540px;
+}
+
+#pizza_picture{
+    width: 200px;
+    height: 200px;
+}

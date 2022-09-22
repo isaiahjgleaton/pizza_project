@@ -1,0 +1,21 @@
+.header{
+    color: blue;
+    justify-content: space-between;
+    margin-top: -40px;
+}
+.bar{
+    background-color: white;
+    color: blue;
+    margin-left: 990px;
+    width: 400px;
+    font-size: larger;
+    padding-left: 10px;
+    display: inline;
+}
+.orders{
+    border: solid 2px black;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    width: 200px;
+    padding-left: 10px;
+}

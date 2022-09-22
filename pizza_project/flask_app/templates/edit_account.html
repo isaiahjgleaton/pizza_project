@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="{{ url_for('static', filename='edit_account.css') }}">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="bar">
+        <a id="bar_id"href="/home">Home</a>
+        <a id="bar_id" href="/purchase_page">Order</a>
+        <a id="bar_id" href="/update_user_page/{{users.id}}">Account</a>
+        <a id="bar_id" href="/logout">Logout</a>
+    </div>
+    <div class="header">
+        <h1>Isaiah's Pizza!</h1>
+    </div>
+    <div class="mid_page">
+        <div class="account">
+            <h2>Account Info</h2>
+            <form action="/update_user/{{users.id}}" method="post">
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" placeholder="{{users.firstname}}">
+                <br>
+                <br>
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" placeholder="{{users.lastname}}">
+                <br>
+                <br>
+                <label for="email">Email</label>
+                <input type="text" name="email" placeholder="{{users.email}}">
+                <br>
+                <br>
+                <label for="address">Address</label>
+                <input type="text" name="address" placeholder="{{users.address}}">
+                <br>
+                <br>
+                <label for="city">City</label>
+                <input type="text" name="city" placeholder="{{users.city}}">
+                <br>
+                <br>
+                <label for="state">State</label>
+                <input type="text" name="state" placeholder="{{users.state}}">
+                <br>
+                <br>
+                <button id="button">Update</button>
+            </form>
+            <br>
+            <br>
+            <button id="button"><a href="/delete_account/{{users.id}}">Delete Account</a></button>
+        </div>
+        <div class="past_orders">
+            <h2>Past Orders</h2>
+            {% for order in orders %}
+            <div class="orders">
+                <p>Date: {{order.created_at}}</p>
+                <p>Method: {{order.method}}</p>
+                <p>Size: {{order.size}}</p>
+                <p>Toppings: {{order.toppings}}</p>
+                <p>Qty: {{order.quantity}}</p>
+                <h3>Price: ${{order.quantity * 8.00 + 0.59}} </h3>
+
+                {% if order.id not in favorites|map(attribute="id") %}
+                <form action="/favorite" method="post">
+                <input type="hidden" name="user_id" value="{{session[user_id]}}" id="{{session[user_id]}}">
+                <input type="hidden" name="order_id" value="{{order.id}}" id="{{order.id}}">
+                <button class="buttonone" id="button">Add as favorite!</button>
+            {% endif %}
+            </form>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
+
+</body>
+</html>

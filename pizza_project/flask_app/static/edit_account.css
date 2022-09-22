@@ -1,0 +1,33 @@
+.header{
+    color: blue;
+    justify-content: space-between;
+    margin-top: -40px;
+}
+.bar{
+    background-color: white;
+    color: blue;
+    margin-left: 990px;
+    width: 400px;
+    font-size: larger;
+    padding-left: 10px;
+    display: inline;
+}
+.mid_page{
+    display: flex;
+}
+.past_orders{
+    margin-left: 600px;
+}
+
+.orders{
+    border: solid 2px black;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    width: 200px;
+    padding-left: 10px;
+}
+
+#button{
+    background-color:blue;
+    color: white
+}
