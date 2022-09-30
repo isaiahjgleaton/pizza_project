@@ -1,0 +1,9 @@
+.header{
+    color: blue;
+    justify-content: space-between;
+    margin-top: -40px;
+}
+#login_link{
+    background-color: white;
+    color: blue;
+    margin-left: 920px;

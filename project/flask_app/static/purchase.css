@@ -1,0 +1,27 @@
+.header{
+    color: blue;
+    justify-content: space-between;
+    margin-top: -40px;
+    width: 200px;
+}
+.bar{
+    background-color: white;
+    color: blue;
+    margin-left: 960px;
+    width: 400px;
+    font-size: larger;
+    padding-left: 10px;
+    display: inline;
+}
+
+.order{
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin-left: 500px;
+    width: 200px;
+    height: 350px;
+    padding-left: 10px;
+}
+.order, h1{
+    color: blue;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href="{{ url_for('static', filename='new_order.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="bar">
+            <a id="bar_id"href="/home">Home</a>
+            <a id="bar_id" href="">Order</a>
+            <a id="bar_id" href="/update_user_page/{{users.id}}">Account</a>
+            <a id="bar_id" href="/logout">Logout</a>
+        </div>
+        <div class="header">
+            <h1>Isaiah's Pizza!</h1>
+            <p>Hey, {{session['first_name']}}!</p>
+        </div>
+        <div class="order">
+            <h2 id="craft">Craft-A-Pizza!</h2>
+            <form action="/order" method="post">
+                <label for="method">Method?</label>
+                <select name="method">
+                    <option value="carryout"> CarryOut</option>
+                    <option value="delivery">Delivery</option>
+                </select>
+                <br>
+                <br>
+                <label for="size">Size?</label>
+                <select name="size">
+                    <option value="large">Large</option>
+                    <option value="medium">Medium</option>
+                    <option value="small">Small</option>
+                </select>
+                <label for="crust">Crust?</label>
+                <select name="crust">
+                    <option value="thin">Thin Crust</option>
+                    <option value="stuffed">Stuffed Crust</option>
+                    <option value="regular">Regular</option>
+                </select>
+                <label for="quantity">Quantity?</label>
+                <input type="number" name="quantity">
+                <br>
+                <br>
+                <label for="toppings">Toppings?</label>
+                <select name="toppings">
+                    <option value="pepperoni">Pepperoni</option>
+                    <option value="sausage">Sausage</option>
+                    <option value="pineapple">Pineapple</option>
+                    <option value="plain">Plain (cheese)</option>
+                </select>
+                <input type="hidden" name="user_id" value="{{session['user_id']}}">
+                
+                <br>
+                <br>
+                <button id="button">Add to order!</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

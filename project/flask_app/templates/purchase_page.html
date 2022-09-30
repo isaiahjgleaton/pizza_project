@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel='stylesheet' href="{{ url_for('static', filename='purchase.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="bar">
+            <a id="bar_id"href="/home">Home</a>
+            <a id="bar_id" href="/purchase_page">Order</a>
+            <a id="bar_id" href="/update_user_page/{{users.id}}">Account</a>
+            <a id="bar_id" href="/logout">Logout</a>
+        </div>
+        <div class="header">
+            <h1>Isaiah's Pizza!</h1>
+            <p>Hey, {{session['first_name']}}!</p>
+        </div>
+        <div class="order">
+                <h1>Your Order:</h1>
+                {% for order in orders %}
+                <p>Method: {{order.method}}</p>
+                <p>Qty: {{order.quantity}}</p>
+                <p>Size: {{order.size}}</p>
+                <p>Crust: {{order.crust}}</p>
+                <p>Toppings: {{order.toppings}}</p>
+                <h3>Price: ${{order.quantity * 8.00 + 0.59}} </h3>
+            {% endfor %}
+            <button id="button"><a href="/purchase_order">Purchase!</a></button>
+        </div>
+    </div>
+</body>
+</html>
