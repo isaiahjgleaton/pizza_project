@@ -13,8 +13,12 @@
     padding-left: 10px;
     display: inline;
 }
+#order{
+    color: blue;
+}
 .orders{
-    border: solid 2px black;
+    color: blue;
+    border: solid 2px blue;
     border-radius: 10px;
     margin-bottom: 5px;
     width: 200px;

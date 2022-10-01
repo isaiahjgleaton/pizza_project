@@ -19,7 +19,7 @@
             <h1>Isaiah's Pizza!</h1>
             <p>Hey, {{session['first_name']}}!</p>
         </div>
-        <h1>Your Favorite Orders!</h1>
+        <h1 id="order">Your Favorite Orders!</h1>
         {% for order in favorites %}
         <div class="orders">
             <p>Date: {{order.created_at}}</p>
